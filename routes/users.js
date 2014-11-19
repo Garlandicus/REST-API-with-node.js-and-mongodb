@@ -40,7 +40,7 @@ router.delete('/deleteuser/:id', function (req, res) {
 router.put('/updateuser/:id', function (req, res) {
 	var db = req.db;
 	var userToUpdate = req.params.id; //Thar be an issue here
-	db.collection('userlist').update(userToUpdate.id, function(err, result) {
+	db.collection('userlist').updateById(userToUpdate, function(err, result) {
 		res.send((result === 1) ? { msg: '' } : { msg: 'error: ' + err });
 	})
 })

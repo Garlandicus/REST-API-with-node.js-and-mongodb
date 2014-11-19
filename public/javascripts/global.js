@@ -56,6 +56,7 @@ function showUserInfo(event) {
 	$('#userInfoLocation').text(thisUserObject.location);
 
 	//Populate Update User Box
+	$('#updateUser fieldset input#updateUserId').val(thisUserObject._id);
 	$('#updateUser fieldset input#updateUserName').val(thisUserObject.username);
 	// $('#updateUser fieldset input#updateUserEmail').val(thisUserObject.email);
 	$('#updateUser fieldset input#updateUserFullName').val(thisUserObject.fullname);
@@ -162,7 +163,7 @@ function updateUser(event) {
 
 		//If it is, compile user info into new object
 		var updateUser = {
-			'id' : 
+			'_id' : 	$('#updateUser fieldset input#updateUserId').val(),
 			'fullname': $('#updateUser fieldset input#updateUserFullname').val(),
 			'age': 		$('#updateUser fieldset input#updateUserAge').val(),
 			'location': $('#updateUser fieldset input#updateUserLocation').val(),
